@@ -1,0 +1,91 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/<solution>.sln"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Clear Nuget Cache",
+      "type": "shell",
+      "command": "dotnet nuget locals --clear all",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "add migration",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "ef",
+        "migrations",
+        "add",
+        "${input:migrationName}",
+        "--project",
+        "src/<data-project-folder>/<data-project-name>.csproj"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "remove last migration",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "ef",
+        "migrations",
+        "Remove",
+        "--project",
+        "src/<data-project-folder>/<data-project-name>.csproj"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "update database",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "ef",
+        "database",
+        "update",
+        "--project",
+        "src/<data-project-folder>/<data-project-name>.csproj"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "update database to migration",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "ef",
+        "database",
+        "update",
+        "${input:migrationName}",
+        "--project",
+        "src/<data-project-folder>/<data-project-name>.csproj"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "migrationName",
+      "type": "promptString",
+      "description": "Nome do arquivo de migration a criar"
+    }
+  ]
+}
