@@ -1,5 +1,3 @@
-scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-
-. "$scriptDir/.aws_aliases.sh"
-. "$scriptDir/.git_aliases.sh"
-. "$scriptDir/.terraform_aliases.sh"
+. ~/.dev-settings/bash/.aws_aliases.sh
+. ~/.dev-settings/bash/.git_aliases.sh
+. ~/.dev-settings/bash/.terraform_aliases.sh

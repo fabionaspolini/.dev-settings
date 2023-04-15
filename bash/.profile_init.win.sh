@@ -1,4 +1,2 @@
-scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-
-. "$scriptDir/.profile_init.sh"
-. "$scriptDir/.docker_aliases.win.sh"
+. ~/.dev-settings/bash/.profile_init.sh
+. ~/.dev-settings/bash/.docker_aliases.win.sh
