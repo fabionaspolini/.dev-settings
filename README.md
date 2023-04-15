@@ -60,4 +60,4 @@ Import-Module "~\.dev-settings\powershell\Profile.ps1"
 
 ## WSL
 
-Limitar uso de recursos de hardware do Windows Host com o arquivo `~/.wslconfig`.
+Limitar uso de recursos de hardware com o arquivo `~/.wslconfig`.
