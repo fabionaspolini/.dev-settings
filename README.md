@@ -17,14 +17,16 @@ cd ~
 git clone https://github.com/fabionaspolini/.dev-settings.git
 
 # ou por ssh
-# git clone git@github.com:fabionaspolini/.dev-settings.git
+git clone git@github.com:fabionaspolini/.dev-settings.git
 ```
+
+2. Realize as configurações em cada tecnologia abaixo.
 
 ## bash
 
-Editar arquivo `~/.bash_profile` e adicionar:
-
 Para **Windows**:
+
+Editar arquivo `~/.bash_profile` e adicionar:
 
 ```bash
 . ~/.dev-settings/bash/.profile_init.win.sh
@@ -32,8 +34,10 @@ Para **Windows**:
 
 Para **Linux**:
 
+Editar arquivo `~/.bashrc` e adicionar:
+
 ```bash
-. ~/.dev-settings/bash/.profile_init.win.sh
+. ~/.dev-settings/bash/.profile_init.sh
 ```
 
 ## cmd
