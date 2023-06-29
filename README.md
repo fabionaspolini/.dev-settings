@@ -6,6 +6,7 @@ Configurações para ambiente de desenvolvimento.
 - [bash](#bash)
 - [cmd](#cmd)
 - [PowerShell](#powershell)
+- [Windows Terminal](#windows-terminal)
 - [WSL](#wsl)
 
 ## Como usar?
@@ -61,6 +62,13 @@ e adicionar:
 ```powershell
 Import-Module "~\.dev-settings\powershell\Profile.ps1"
 ```
+
+## Windows Terminal
+
+Configurações e temas
+
+- Path: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
+- Arquivo: [windows-terminal/settings.json](windows-terminal/settings.json)
 
 ## WSL
 
