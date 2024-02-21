@@ -3,11 +3,11 @@
 Configurações para ambiente de desenvolvimento.
 
 - [Como usar?](#como-usar)
-- [bash](#bash)
-- [cmd](#cmd)
-- [PowerShell](#powershell)
-- [Windows Terminal](#windows-terminal)
-- [WSL](#wsl)
+  - [bash](#bash)
+  - [cmd](#cmd)
+  - [PowerShell](#powershell)
+- [Stacks](#stacks)
+- [Configurações](#configurações)
 
 ## Como usar?
 
@@ -21,9 +21,9 @@ git clone https://github.com/fabionaspolini/.dev-settings.git
 git clone git@github.com:fabionaspolini/.dev-settings.git
 ```
 
-2. Realize as configurações em cada tecnologia abaixo.
+2. Relizar configurações para o tipo de terminal adequado abaixo:
 
-## bash
+### bash
 
 Para **Windows**:
 
@@ -41,7 +41,7 @@ Editar arquivo `~/.bashrc` e adicionar:
 . ~/.dev-settings/bash/.profile_init.sh
 ```
 
-## cmd
+### cmd
 
 [Tutorial](https://stackoverflow.com/questions/20530996/aliases-in-windows-command-prompt)
 
@@ -50,7 +50,7 @@ Editar arquivo `~/.bashrc` e adicionar:
 "AutoRun"="%USERPROFILE%\\.dev-settings\\cmd\\alias.cmd"
 ```
 
-## PowerShell
+### PowerShell
 
 Editar script de inicialização do profile
 
@@ -63,14 +63,18 @@ e adicionar:
 Import-Module "~\.dev-settings\powershell\Profile.ps1"
 ```
 
-## Windows Terminal
+## Stacks
 
-Configurações e temas
+- [cmder](stacks/cmder)
+- [vscode](stacks/vscode)
+- [windows-terminal](stacks/windows-terminal)
+- [wsl](stacks/wsl)
 
-- Path: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
-- Arquivo: [windows-terminal/settings.json](windows-terminal/settings.json)
-- Temas customizados: My Light
+## Configurações
 
-## WSL
-
-Limitar uso de recursos de hardware com o arquivo `~/.wslconfig`.
+| Grupo    | Item          | Valor         |
+| -------- | ------------- | ------------- |
+| Terminal | Font Name     | Cascadia Code |
+| Terminal | Font Size     | 18            |
+| Terminal | Font Style    | Bold          |
+| Terminal | Anti-aliasing | Standard      |
