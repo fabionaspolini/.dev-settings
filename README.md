@@ -6,7 +6,7 @@ Configurações para ambiente de desenvolvimento.
   - [bash](#bash)
   - [cmd](#cmd)
   - [PowerShell](#powershell)
-- [Stacks](#stacks)
+- [Tools](#tools)
 - [Configurações](#configurações)
 
 ## Como usar?
@@ -63,12 +63,12 @@ e adicionar:
 Import-Module "~\.dev-settings\powershell\Profile.ps1"
 ```
 
-## Stacks
+## Tools
 
-- [cmder](stacks/cmder)
-- [vscode](stacks/vscode)
-- [windows-terminal](stacks/windows-terminal)
-- [wsl](stacks/wsl)
+- [cmder](tools/cmder)
+- [vscode](tools/vscode)
+- [windows-terminal](tools/windows-terminal)
+- [wsl](tools/wsl)
 
 ## Configurações
 
