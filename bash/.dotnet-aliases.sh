@@ -1,0 +1,1 @@
+alias clear-nuget-cache="dotnet nuget locals --clear all"

@@ -1,0 +1,1 @@
+alias clear-dev-folders=". ~/.dev-settings/bash/scripts/clear-dev-folders.sh"

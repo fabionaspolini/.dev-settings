@@ -1,1 +1,0 @@
-﻿dotnet nuget locals --clear all
