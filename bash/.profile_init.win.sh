@@ -1,4 +1,4 @@
 SCRIPT_DIR="$(dirname -- "${BASH_SOURCE[0]}")"
 
-. $SCRIPT_DIR/.profile-init.sh
-. $SCRIPT_DIR/.wsl-aliases.win.sh
+. $SCRIPT_DIR/.profile_init.sh
+. $SCRIPT_DIR/.wsl_aliases.win.sh
