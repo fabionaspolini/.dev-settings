@@ -1,9 +1,12 @@
-. ~/.dev-settings/bash/.aws-aliases.sh
-. ~/.dev-settings/bash/.docker-aliases.sh
-. ~/.dev-settings/bash/.dotnet-aliases.sh
-. ~/.dev-settings/bash/.git-aliases.sh
-. ~/.dev-settings/bash/.terraform-aliases.sh
-. ~/.dev-settings/bash/scripts/.aliases.sh
+DEV_SETTINGS_DIR="$(dirname -- "${BASH_SOURCE[0]}")"
+
+. $DEV_SETTINGS_DIR/.aws-aliases.sh
+. $DEV_SETTINGS_DIR/.docker-aliases.sh
+. $DEV_SETTINGS_DIR/.dotnet-aliases.sh
+. $DEV_SETTINGS_DIR/.git-aliases.sh
+. $DEV_SETTINGS_DIR/.terraform-aliases.sh
+. $DEV_SETTINGS_DIR/scripts/.aliases.sh
+
 
 # Enable Git branch display in prompt
 if [ -f /usr/lib/git-core/git-sh-prompt ]; then
