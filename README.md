@@ -16,9 +16,6 @@ Configurações para ambiente de desenvolvimento.
 ```bash
 cd ~
 git clone https://github.com/fabionaspolini/.dev-settings.git
-
-# ou por ssh
-git clone git@github.com:fabionaspolini/.dev-settings.git
 ```
 
 2. Relizar configurações para o tipo de terminal adequado abaixo:
