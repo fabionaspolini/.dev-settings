@@ -1,3 +1,5 @@
+# shellcheck disable=SC2034
+
 # Enable Git branch display in prompt
 git_prompt_script_exists=0
 if [ -f /usr/lib/git-core/git-sh-prompt ]; then
@@ -36,25 +38,3 @@ fi
 # original fedora 42
 # ${PROMPT_START@P}\[\e[${PROMPT_COLOR}${PROMPT_HIGHLIGHT:+;$PROMPT_HIGHLIGHT}m\]${PROMPT_USERHOST@P}\[\e[0m\]${PROMPT_SEPARATOR@P}\[\e[${PROMPT_DIR_COLOR-${PROMPT_COLOR}}${PROMPT_HIGHLIGHT:+;$PROMPT_HIGHLIGHT}m\]${PROMPT_DIRECTORY@P}\[\e[0m\]${PROMPT_END@P}\$\[\e[0m\]
 # "${PROMPT_START@P}\[\e[${PROMPT_COLOR}${PROMPT_HIGHLIGHT:+;$PROMPT_HIGHLIGHT}m\]${PROMPT_USERHOST@P}\[\e[0m\]${PROMPT_SEPARATOR@P}\[\e[${PROMPT_DIR_COLOR-${PROMPT_COLOR}}${PROMPT_HIGHLIGHT:+;$PROMPT_HIGHLIGHT}m\]\w\[\e[0m\]${PROMPT_END@P}\$\[\e[0m\] "
-
-# if git rev-parse --git-dir > /dev/null 2>&1; then
-#     echo "This is a Git repository."
-# else
-#     echo "This is not a Git repository."
-# fi
-
-# is_git_repository () {
-#     if git rev-parse --git-dir > /dev/null 2>&1; then
-#         return 1
-#     else
-#         return 0
-#     fi
-# }
-
-# check_if_is_git_repository () {
-#     if git rev-parse --git-dir > /dev/null 2>&1; then
-#         echo "This is a Git repository."
-#     else
-#         echo "This is not a Git repository."
-#     fi
-# }
