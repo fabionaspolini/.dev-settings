@@ -11,5 +11,3 @@ Convenção de nomes:
 |
 └──────────────────⫸ Fixo
 ```
-
-`.profile_init.<platform>.sh`: Vincular na inicialização do profile para carregar demais scripts
