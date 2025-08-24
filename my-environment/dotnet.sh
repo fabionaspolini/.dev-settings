@@ -8,7 +8,7 @@ export DOTNET_CLI_UI_LANGUAGE=en
 
 # Android workload build
 export AcceptAndroidSDKLicenses=True
-export AndroidSdkDirectory=/home/Android/Sdk/
+export AndroidSdkDirectory=/home/fabio/Android/Sdk/
 export JavaSdkDirectory=/lib/jvm/jdk-21.0.8+9/
 
 # bash parameter completion for the dotnet CLI

@@ -1,1 +1,1 @@
-export PATH="$PATH:/home/Android/Sdk/platform-tools:/home/Android/Sdk/cmdline-tools/latest/bin/"
+export PATH="$PATH:/home/fabio/Android/Sdk/platform-tools:/home/fabio/Android/Sdk/cmdline-tools/latest/bin/"
