@@ -5,6 +5,7 @@ fi
 
 # .net
 export DOTNET_CLI_UI_LANGUAGE=en
+export DOTNET_ROOT=/lib64/dotnet/
 
 # Android workload build
 export AcceptAndroidSDKLicenses=True
