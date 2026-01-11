@@ -1,9 +1,9 @@
 CURRENT_FOLDER="$(dirname -- "${BASH_SOURCE[0]}")"
 
-. "$CURRENT_FOLDER"/android.sh
-. "$CURRENT_FOLDER"/bash-prompt-format.sh
-. "$CURRENT_FOLDER"/dotnet.sh
-. "$CURRENT_FOLDER"/java.sh
-. "$CURRENT_FOLDER"/python.sh
+for script in "$CURRENT_FOLDER"/*.sh; do
+  if [[ "$script" != "$CURRENT_FOLDER/init.sh" ]]; then
+    . "$script"
+  fi
+done
 
 unset CURRENT_FOLDER
