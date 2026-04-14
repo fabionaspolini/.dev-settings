@@ -5,7 +5,7 @@
 
 
 # Configurações globais
-DESTINO="/home/fabio/GoogleDrive/Backups/Automatic"
+DESTINO="$HOME/GoogleDrive/Backups/Automatic"
 
 # Cores para mensagens
 VERDE='\033[0;32m'
@@ -21,10 +21,12 @@ NC='\033[0m' # Sem cor
 # Os caminhos podem ser arquivos ou diretórios
 # ============================================================================
 
+# Adicione mais backups conforme necessário:
+# [outro_backup]="/path/1:/path/2:/path/3"
 declare -A BACKUPS=(
-    [qwen]="/home/fabio/.qwen/agents:/home/fabio/.qwen/skills:/home/fabio/.qwen/settings.json"
-    # Adicione mais backups conforme necessário:
-    # [outro_backup]="/path/1:/path/2:/path/3"
+    [bashrc.d]="$HOME/.bashrc.d"
+    [qwen]="$HOME/.qwen/agents:$HOME/.qwen/skills:$HOME/.qwen/settings.json"
+    [config]="$HOME/.config/systemd/user/*.service" 
 )
 
 # ============================================================================
