@@ -7,6 +7,7 @@ scripts=(
     "backup.sh"
     "clear-dev-folders.sh"
     "delete-merged-branchs.sh"
+    "kafka.sh"
 )
 
 CURRENT_FOLDER="$(dirname -- "${BASH_SOURCE[0]}")"
