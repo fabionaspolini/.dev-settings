@@ -1,4 +1,4 @@
-# .dev-settings
+# .dev-tools
 
 Configurações para ambiente de desenvolvimento.
 
@@ -15,7 +15,7 @@ Configurações para ambiente de desenvolvimento.
 
 ```bash
 cd ~
-git clone https://github.com/fabionaspolini/.dev-settings.git
+git clone https://github.com/fabionaspolini/.dev-tools.git
 ```
 
 2. Relizar configurações para o tipo de terminal adequado abaixo:
@@ -27,7 +27,7 @@ Para **Windows**:
 Editar arquivo `~/.bash_profile` e adicionar:
 
 ```bash
-. ~/.dev-settings/bash/.profile_init.win.sh
+. ~/.dev-tools/bash/.profile_init.win.sh
 ```
 
 Para **Linux**:
@@ -35,7 +35,7 @@ Para **Linux**:
 Editar arquivo `~/.bashrc` e adicionar:
 
 ```bash
-. ~/.dev-settings/bash/.profile_init.sh
+. ~/.dev-tools/bash/.profile_init.sh
 ```
 
 ### cmd
@@ -44,7 +44,7 @@ Editar arquivo `~/.bashrc` e adicionar:
 
 ```reg
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor]
-"AutoRun"="%USERPROFILE%\\.dev-settings\\cmd\\alias.cmd"
+"AutoRun"="%USERPROFILE%\\.dev-tools\\cmd\\alias.cmd"
 ```
 
 ### PowerShell
@@ -57,7 +57,7 @@ Editar script de inicialização do profile
 e adicionar:
 
 ```powershell
-Import-Module "~\.dev-settings\powershell\Profile.ps1"
+Import-Module "~\.dev-tools\powershell\Profile.ps1"
 ```
 
 ## Tools
