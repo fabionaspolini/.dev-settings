@@ -8,6 +8,7 @@ scripts=(
     "clear-dev-folders.sh"
     "delete-merged-branchs.sh"
     "kafka.sh"
+    "refresh-envs-so.sh"
 )
 
 CURRENT_FOLDER="$(dirname -- "${BASH_SOURCE[0]}")"
