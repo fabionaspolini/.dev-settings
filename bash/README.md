@@ -12,4 +12,4 @@ Convenção de nomes:
 └──────────────────⫸ Fixo
 ```
 
-Scripts sem o sufixo "platform" são para ambientes Linux por padrão.
+Scripts sem o sufixo "platform" são para ambiente Linux por padrão.

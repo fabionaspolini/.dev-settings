@@ -1,6 +1,6 @@
 # .dev-tools
 
-Configurações para ambiente de desenvolvimento.
+Minhas configurações e scripts para ambiente de desenvolvimento.
 
 - [Como usar?](#como-usar)
   - [bash](#bash)
@@ -18,24 +18,24 @@ cd ~
 git clone https://github.com/fabionaspolini/.dev-tools.git
 ```
 
-2. Relizar configurações para o tipo de terminal adequado abaixo:
+2. Realizar configurações para o tipo de terminal adequado abaixo:
 
 ### bash
 
-Para **Windows**:
+**Linux**:
+
+Criar arquivo `~/.bashrc.d/dev-tools-init.sh` e adicionar:
+
+```bash
+. ~/.dev-tools/bash/.profile_init.sh
+```
+
+**Windows**:
 
 Editar arquivo `~/.bash_profile` e adicionar:
 
 ```bash
 . ~/.dev-tools/bash/.profile_init.win.sh
-```
-
-Para **Linux**:
-
-Editar arquivo `~/.bashrc` e adicionar:
-
-```bash
-. ~/.dev-tools/bash/.profile_init.sh
 ```
 
 ### cmd
