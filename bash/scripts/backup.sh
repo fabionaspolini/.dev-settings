@@ -33,7 +33,8 @@ NC='\033[0m' # Sem cor
 # Adicione mais backups conforme necessário:
 declare -A BACKUPS=(
     [bashrc.d]="-C|$HOME/.bashrc.d|*.*"
-    [qwen]="-C|$HOME/.qwen|agents:skills:settings.json"
+#    [qwen]="-C|$HOME/.qwen|agents:skills:settings.json"
+    [qwen]="-C|$HOME/.qwen|*"
     [config]="-C|$HOME/.config|systemd/user/*.service:systemd/user/*.timer:plasma*:kglobalshortcutsrc:kdeglobals:kwin*"
     [local]="-C|$HOME/.local|share/plasma*"
 )
