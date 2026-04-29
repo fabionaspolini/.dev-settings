@@ -25,6 +25,7 @@ FOLDERS[node_modules]="Pasta 'node_modules' (Node.js)"
 FOLDERS[publish]="Pasta 'publish' (publicações)"
 FOLDERS[angular]="Pasta '.angular' (Angular)"
 FOLDERS[terraform]="Pasta '.terraform' (Terraform)"
+FOLDERS[venv]="Pasta '.venv' (Python virtual environment)"
 
 # Mostrar menu de seleção
 echo -e "${GREEN}Selecione as pastas que deseja limpar:${NC}\n"
@@ -53,6 +54,7 @@ if [[ "$SELECTION" == "all" ]]; then
     TO_DELETE[publish]=1
     TO_DELETE[angular]=1
     TO_DELETE[terraform]=1
+    TO_DELETE[venv]=1
 elif [[ "$SELECTION" == "none" ]]; then
     echo -e "${YELLOW}Nenhuma pasta foi selecionada. Operação cancelada.${NC}"
     return 0
@@ -116,6 +118,11 @@ fi
 if [[ -v TO_DELETE[terraform] ]]; then
     echo "Apagando pastas '.terraform'..."
     find . -iname ".terraform" -type d -exec rm -rf {} + 2>/dev/null || true
+fi
+
+if [[ -v TO_DELETE[venv] ]]; then
+    echo "Apagando pastas '.venv'..."
+    find . -iname ".venv" -type d -exec rm -rf {} + 2>/dev/null || true
 fi
 
 echo -e "\n${GREEN}✓ Limpeza concluída com sucesso!${NC}\n"
