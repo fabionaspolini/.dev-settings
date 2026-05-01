@@ -1,4 +1,4 @@
-#. "$(dirname -- "${BASH_SOURCE[0]}")/bash-utils.sh"
+#. "$(dirname -- "${BASH_SOURCE[0]}")/utils/bash-utils.sh"
 #
 ## File functions to ignore when listing available commands
 #_KAFKA_IGNORED_FUNCTIONS=("_kafka_autocomplete" "register_kafka_autocomplete" "_handle_kafka_command")
