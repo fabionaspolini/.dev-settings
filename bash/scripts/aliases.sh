@@ -7,7 +7,7 @@ scripts=(
     "backup.sh"
     "clear-dev-folders.sh"
     "delete-merged-branchs.sh"
-    "kafka.sh"
+#    "kafka.sh"
     "refresh-envs-so.sh"
 )
 
