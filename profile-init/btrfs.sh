@@ -1,4 +1,4 @@
-alias snapper-cleanup-execute="sudo systemctl start snapper-cleanup.service"
+alias snapper-cleanup-execute="sudo systemctl start snapper-cleanup.service && journalctl -u snapper-cleanup.service"
 alias snapper-cleanup-status="systemctl status snapper-cleanup.service"
 alias snapper-cleanup-logs="journalctl -u snapper-cleanup.service"
 
