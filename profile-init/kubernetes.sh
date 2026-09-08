@@ -1,4 +1,8 @@
 # Carrega autocomplete do kubectl
+if ! command -v kubectl &> /dev/null; then
+    return 0
+fi
+
 source <(kubectl completion bash)
 
 alias k="kubectl"
