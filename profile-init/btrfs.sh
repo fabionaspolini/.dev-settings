@@ -1,3 +1,27 @@
-alias btrfs-cleanup="sudo systemctl start snapper-cleanup.service"
-alias btrfs-cleanup-status="systemctl status snapper-cleanup.service"
-alias btrfs-cleanup-logs="journalctl -u snapper-cleanup.service"
+alias snapper-cleanup-execute="sudo systemctl start snapper-cleanup.service"
+alias snapper-cleanup-status="systemctl status snapper-cleanup.service"
+alias snapper-cleanup-logs="journalctl -u snapper-cleanup.service"
+
+snapper-cleanup-pre-upgrade-snapshots() {
+  local description="Pre-upgrade packages automatic"
+  local numbers
+  local list_output
+
+  sudo -v
+
+  list_output=$(sudo snapper --csvout list --columns number,description)
+  numbers=$(echo "$list_output" | awk -F',' -v desc="$description" 'NR > 1 && $2 == desc { print $1 }')
+
+  if [[ -z "$numbers" ]]; then
+    echo "Nenhum snapshot com a descrição '$description' encontrado."
+    return 0
+  fi
+
+  echo "Snapshots a serem removidos (descrição: '$description'):"
+  echo "$numbers"
+  echo "----------------------------------------"
+  read -n1 -s -p "Pressione qualquer tecla para confirmar a remoção (Ctrl+C para cancelar)..."
+  echo
+
+  sudo snapper delete $numbers
+}
