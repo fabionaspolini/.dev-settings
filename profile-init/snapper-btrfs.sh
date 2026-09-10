@@ -25,3 +25,17 @@ snapper-cleanup-pre-upgrade-snapshots() {
 
   sudo snapper delete $numbers
 }
+
+snapper-create-snapshot() {
+    local description="$1"
+
+    if [[ -z "$description" ]]; then
+        read -rp "Snapshot description [Standalone snapshot]: " description
+        description="${description:-Standalone snapshot}"
+    fi
+
+    sudo snapper --config root create \
+        --type single \
+        --description "$description" \
+        --cleanup-algorithm number
+}

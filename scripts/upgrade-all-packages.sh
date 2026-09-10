@@ -22,7 +22,10 @@ fi
 
 if [[ "$snapshot" == "true" ]]; then
     echo "Creating btrfs snapshot..."
-    sudo snapper --config root create --type single --description "Pre-upgrade packages automatic" --cleanup-algorithm number
+    sudo snapper --config root create \
+        --type pre \
+        --description "Pre-upgrade packages automatic" \
+        --cleanup-algorithm number
 fi
 
 echo "Upgrading all packages..."
