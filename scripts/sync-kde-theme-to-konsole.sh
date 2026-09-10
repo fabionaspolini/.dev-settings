@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Flags
+ENABLE_KONSOLE_RESTART=false
+
 # Detecta se o sistema está em modo Dark ou Light
 # (retorna true para escuro no Plasma)
 IS_DARK=$(kreadconfig6 --group "General" --key "ColorScheme" | grep -i -e "macchiato" -e "dark")
@@ -43,4 +46,29 @@ if [ "$denied" = true ]; then
     echo "  [KonsoleWindow]" >&2
     echo "  EnableSecuritySensitiveDBusAPI=true" >&2
     echo "e reinicie o Konsole. Isso também libera runCommand/sendText via D-Bus." >&2
+fi
+
+# Com UseSingleInstance=true, todas as janelas do Konsole rodam num único processo,
+# que só lê o DefaultProfile novo se for reiniciado (ver comentário acima). Se só
+# houver essa única instância rodando, reinicia automaticamente para aplicar o novo
+# profile em terminais futuros; se houver mais de um processo (single instance
+# desabilitado ou instâncias desalinhadas), apenas avisa o usuário.
+useSingleInstance=$(kreadconfig6 --file konsolerc --group "KonsoleWindow" --key "UseSingleInstance")
+
+if [ "$useSingleInstance" = "true" ]; then
+    if [ ! "$ENABLE_KONSOLE_RESTART" = true ]; then
+        echo "Konsole auto restart disabled. Please close all Konsole windows and restart manually to apply new profile for new new instances."
+        exit 0
+    fi
+
+    konsole_pids=($(pgrep -x konsole))
+
+    if [ "${#konsole_pids[@]}" -eq 1 ]; then
+        kquitapp6 konsole 2>/dev/null || kill "${konsole_pids[0]}"
+        setsid konsole >/dev/null 2>&1 &
+        disown
+    elif [ "${#konsole_pids[@]}" -gt 1 ]; then
+        echo "Konsole está em modo single instance, mas há ${#konsole_pids[@]} processos konsole rodando." >&2
+        echo "Feche todas as janelas do Konsole para que novos terminais usem o profile '$NEW_PROFILE'." >&2
+    fi
 fi
