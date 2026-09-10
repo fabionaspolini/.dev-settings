@@ -3,15 +3,30 @@
 # Flags
 ENABLE_KONSOLE_RESTART=false
 
-# Detecta se o sistema está em modo Dark ou Light
-# (retorna true para escuro no Plasma)
-IS_DARK=$(kreadconfig6 --group "General" --key "ColorScheme" | grep -i -e "macchiato" -e "dark")
+case "$1" in
+    dark|nightly)
+        NEW_PROFILE="Nightly"
+        ;;
+    light|daily)
+        NEW_PROFILE="Daily"
+        ;;
+    "")
+        # Sem argumento: detecta se o sistema está em modo Dark ou Light
+        # (retorna true para escuro no Plasma)
+        IS_DARK=$(kreadconfig6 --group "General" --key "ColorScheme" | grep -i -e "macchiato" -e "dark")
 
-if [ -n "$IS_DARK" ]; then
-    NEW_PROFILE="Nightly"
-else
-    NEW_PROFILE="Daily"
-fi
+        if [ -n "$IS_DARK" ]; then
+            NEW_PROFILE="Nightly"
+        else
+            NEW_PROFILE="Daily"
+        fi
+        ;;
+    *)
+        # NEW_PROFILE="$1"
+        echo "Invalid option profile: $1"
+        exit 1
+        ;;
+esac
 
 # Altera o profile padrão usado ao abrir novos terminais.
 # OBS: o Konsole só lê essa chave uma vez, no início do processo (ProfileManager
