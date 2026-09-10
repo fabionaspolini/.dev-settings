@@ -1,9 +1,21 @@
 #!/bin/bash
 
-# Flags
-ENABLE_KONSOLE_RESTART=false
+CURRENT_FOLDER="$(dirname -- "${BASH_SOURCE[0]}")"
+source "$CURRENT_FOLDER/utils/parse-args.sh"
+unset CURRENT_FOLDER
 
-case "$1" in
+# Flags
+restart="false"
+
+PROFILE_ARG=""
+if [[ $# -gt 0 && "$1" != --* ]]; then
+    PROFILE_ARG="$1"
+    shift
+fi
+parse_args "$@"
+ENABLE_KONSOLE_RESTART="$restart"
+
+case "$PROFILE_ARG" in
     dark|nightly)
         NEW_PROFILE="Nightly"
         ;;
